@@ -29,7 +29,7 @@ def checkboard():
         wcon2 = (board[i] == board[i+3] == board[i+6] != 0)
         if wcon1 or wcon2: return board[i]
     wcon3 = (board[0] == board[4] == board[8] != 0) or (board[2] == board[4] == board[5] != 0)
-    if wcon3: return board[4]
+    if wcon3:       return board[4]
     if 0  in board: return 0
     return -1
 #  1 - P1 won
