@@ -6,4 +6,5 @@ def is_prime(*nums: int):
             if n % i == 0: prime = False
         print(f"{n} is ", " a prime" if prime else " not a prime")
 
+
 is_prime(0, 1, 2, 3, 4, 5)
