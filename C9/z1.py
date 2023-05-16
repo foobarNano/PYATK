@@ -15,7 +15,7 @@ class MyLinkedList:
         result = '[' + __recursive(self.head) + ']'
 
     def get(self, e: Element):
-        temp: Element = self.head
+        temp = self.head
         while temp != e:
             if temp == None: return
             temp = temp.nextE
@@ -27,7 +27,7 @@ class MyLinkedList:
             self.head = self.head.nextE
             return
 
-        temp: Element = self.head
+        temp = self.head
         while temp.nextE != e:
             if temp.nextE == None: return
             temp = temp.nextE
@@ -35,8 +35,27 @@ class MyLinkedList:
         
 
     def append(self, e: Element, func = None):
-        pass
+        if self.head == None:
+            self.head = e
+            self.tail = e
+            self.size = 1
+            return
 
+        if e.data < self.head.data:
+            e.nextE = self.head
+            self.head = e
+            return
+        
+        temp = self.head
+        while True:
+            if temp.nextE == None or e.data < temp.nextE.data:
+                if e.data < temp.nextE.data:
+                    e.nextE = temp.nextE
+                temp.nextE = e
+                return
+            temp = temp.nextE
+            
+            
     def __recursive(e: Element) -> str:
         if e.nextE == None: return e.data
         return e.data + ', ' + __recursive_get(self, e.nextE)
