@@ -30,7 +30,5 @@ def insert(data: tuple = None):
     cursor.close()
     conn.cursor()
 
-
-
 insert()
 print(fetch())
